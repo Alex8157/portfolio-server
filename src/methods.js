@@ -2,13 +2,13 @@ const statuses = ["Active", "Cancelled", "Filled", "Rejected"];
 let id = 0;
 
 module.exports = {
-  transaction: async (params, broadcast) => {
-    const creationTime = new Date();
-    const changeTime = new Date();
-    const status = statuses[Math.floor(Math.random() * statuses.length)];
-    const result = { ...params, id: id++, creationTime, changeTime, status };
-    broadcast("transaction", result);
-  },
+	transaction: async (params, broadcast) => {
+		const creationTime = new Date();
+		const changeTime = new Date();
+		const status = statuses[Math.floor(Math.random() * statuses.length)];
+		const result = { ...params, id: id++, creationTime, changeTime, status };
+		broadcast("transaction", result);
+	},
 };
 
 // params - содержит параметры с которым был вызван метод
